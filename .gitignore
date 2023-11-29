@@ -1,0 +1,8 @@
+# pycaches
+**/__pycache__
+
+# Caches
+**/cache
+
+# vscode
+.vscode/
