@@ -1,8 +1,9 @@
 """Module handling GW selection effects"""
 import numpy as np
 
+SELECTION_FILE = "/hildafs/projects/phy220048p/share/selection_O3/selection_O3.npz"
 
-def get_beta_for_H0(selection_file, H0):
+def get_beta_for_H0(H0, selection_file=SELECTION_FILE):
     """Get selection function beta for given H0(s).
 
     Parameters
