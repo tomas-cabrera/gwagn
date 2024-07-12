@@ -49,10 +49,14 @@ class Inference:
     def n_agn_in_gw_areas(self, cosmo, n_dz_grid=50, limiting_magnitude=np.inf):
         n_agn = [
             self.agn_distribution.n_agn_in_dOmega_dz_volume(
-                dOmega=gw["0.9Area"],
+                dOmega=gw["area90"],
                 dz_grid=np.linspace(
-                    z_at_value(cosmo.comoving_distance, gw["Distance"] + gw["Disterrlo"]),
-                    z_at_value(cosmo.comoving_distance, gw["Distance"] + gw["Disterrhi"]),
+                    z_at_value(
+                        cosmo.comoving_distance, gw["distance"] + gw["dist_err_lo"]
+                    ),
+                    z_at_value(
+                        cosmo.comoving_distance, gw["distance"] + gw["dist_err_hi"]
+                    ),
                     n_dz_grid,
                 ),
                 cosmo=cosmo,
